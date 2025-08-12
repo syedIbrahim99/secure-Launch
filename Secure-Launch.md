@@ -82,6 +82,7 @@ sudo nano /home/eminds/.execute/custom/bin/script.sh
 
 -----------------------------------
 
+```bash
 CON=$HOME/.execute/custom
 export DOCKER_HOST=unix:///$XDG_RUNTIME_DIR/docker.sock
 con() {
@@ -115,6 +116,7 @@ con() {
     echo "Unauthorized! Please Contact DevOps."
   fi
 }
+```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -328,7 +330,8 @@ Security Highlights:
 
 Hardened Dockerfile: [Nodejs 20] [alpine:18.5.0-alpine hardened]
 ----------------------------------------------------------------
- 
+
+```bash
 FROM alpine:18.5.0-alpine
 #Install required packages
 #Install required packages
@@ -420,11 +423,12 @@ RUN rm -f \
 #Replace /bin/sh with custom sash:
 RUN cp /execute/.custom/entry/sash /bin/sh && chmod +x /bin/sh
 #docker build -t emindsguardians/alpine:latest-hard .
-
-  
+```
+ 
 Dockerfile: (Hardened image with /home/eminds)
 ==============================================
 
+```bash
 FROM node:18.5.0-alpine AS codeshelf
 WORKDIR /home/eminds/app
 ADD source-code /home/eminds/app
@@ -440,3 +444,4 @@ COPY --from=codeshelf /home/eminds/app/app-binary /home/eminds
 COPY --from=codeshelf /home/eminds/app/.env /home/eminds/.env
 #CMD [./app-binary]
 #docker build -t emindsguardians/service:alpine-hard-gateway .
+```
