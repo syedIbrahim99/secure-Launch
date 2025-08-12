@@ -59,11 +59,14 @@ export PATH=$HOME/.execute/custom/bin:$PATH
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ./rootless-docker-setup
+
 systemctl --user start docker
+
 systemctl --user enable docker
+
 systemctl --user status docker
 
---> "docker ps" working
+- "docker ps" working
 
 sudo loginctl enable-linger eminds
 
