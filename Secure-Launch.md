@@ -101,26 +101,26 @@ sudo nano /home/eminds/.execute/custom/bin/script.sh
 CON=$HOME/.execute/custom
 export DOCKER_HOST=unix:///$XDG_RUNTIME_DIR/docker.sock
 con() {
-  # Hardcoded credentials (you can externalize this later)
+  #Hardcoded credentials (you can externalize this later)
   local VALID_USER="devops"
   local VALID_PASS="Eminds@1"
 
-  # Prompt for username
+  #Prompt for username
   echo -n "Username: "
   read USERNAME
 
-  # Prompt for password silently
+  #Prompt for password silently
   echo -n "Password: "
   read -s PASSWORD
   echo
 
-  # Validate credentials
+  #Validate credentials
   if [[ "$USERNAME" != "$VALID_USER" || "$PASSWORD" != "$VALID_PASS" ]]; then
     echo "Authentication failed!"
     return 1
   fi
 
-  # Auth success — proceed
+  #Auth success — proceed
   if [[ "$1" == "ps" ]]; then
     "$CON"/bin/docker ps -a
   elif [[ "$1" == "inspect" ]]; then
