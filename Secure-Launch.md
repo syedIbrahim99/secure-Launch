@@ -48,8 +48,8 @@ shc -f rootless-docker-setup.sh -o rootless-docker-setup
 Note:
 ---
 
---> This "rootless-docker-setup" file will work only if it is compiled on Ubuntu or a similar OS. 
---> If we try to run it on Alpine, it won’t work because Alpine uses different system libraries.
+- This "rootless-docker-setup" file will work only if it is compiled on Ubuntu or a similar OS. 
+- If we try to run it on Alpine, it won’t work because Alpine uses different system libraries.
 
 Before Installing Rootless Docker:
 =================================
