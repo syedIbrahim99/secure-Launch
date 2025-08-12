@@ -416,4 +416,4 @@ COPY --from=codeshelf /home/eminds/app/app-binary /home/eminds
 COPY --from=codeshelf /home/eminds/app/.env /home/eminds/.env
 #CMD [./app-binary]
 
-# docker build -t emindsguardians/service:alpine-hard-gateway .
+#docker build -t emindsguardians/service:alpine-hard-gateway .
