@@ -11,6 +11,7 @@ securing test user's path from root:
 contents inside "rootless-docker-script" binary:
 ===============================================
 
+```bash
 wget https://download.docker.com/linux/static/stable/x86_64/docker-28.3.2.tgz
 wget https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-28.3.2.tgz
 tar -xvf docker-28.3.2.tgz
