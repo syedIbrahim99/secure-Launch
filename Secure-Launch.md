@@ -124,7 +124,7 @@ sudo chown eminds:eminds script.sh
 Restricting "su" user:
 =====================
 
---> Perform this all from "eminds" user.
+- Perform this all from "eminds" user.
 
 sudo groupadd suaccess
 sudo chown eminds:suaccess /bin/su
@@ -146,7 +146,7 @@ ls -l /bin/su /usr/bin/su
 
 sudo usermod -aG suaccess eminds
 
---> Log out and log back in
+- Log out and log back in
 
 su
 
@@ -183,7 +183,7 @@ auth       required pam_wheel.so     (uncomment this line)
 
 sudo usermod -aG sudo eminds
 
---> so now if we run "su test" from root, it will prompt for password.
+- so now if we run "su test" from root, it will prompt for password.
 
 
 sudo chmod 700 *
@@ -421,7 +421,7 @@ RUN cp /execute/.custom/entry/sash /bin/sh && chmod +x /bin/sh
 
   
 Dockerfile: (Hardened image with /home/eminds)
-==========
+==============================================
 
 FROM node:18.5.0-alpine AS codeshelf
 WORKDIR /home/eminds/app
