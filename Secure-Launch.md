@@ -24,6 +24,7 @@ export PATH=$HOME/.execute/custom/bin:$PATH
 cp docker/*  $HOME/.execute/custom/bin
 cp docker-rootless-extras/*  $HOME/.execute/custom/bin
 dockerd-rootless-setuptool.sh install
+```
 
 eminds user:
 ===========
