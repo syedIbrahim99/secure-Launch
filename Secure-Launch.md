@@ -11,17 +11,28 @@ securing test user's path from root:
 contents inside "rootless-docker-script" binary:
 ===============================================
 
-wget https://download.docker.com/linux/static/stable/x86_64/docker-28.3.2.tgz 
+wget https://download.docker.com/linux/static/stable/x86_64/docker-28.3.2.tgz
+
 wget https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-28.3.2.tgz
+
 tar -xvf docker-28.3.2.tgz
+
 tar -xvf docker-rootless-extras-28.3.2.tgz
+
 sudo apt update
+
 sudo apt install -y uidmap dbus-user-session
+
 mkdir -p $HOME/.execute/custom
+
 mkdir -p $HOME/.execute/custom/bin
+
 export PATH=$HOME/.execute/custom/bin:$PATH
+
 cp docker/*  $HOME/.execute/custom/bin
+
 cp docker-rootless-extras/*  $HOME/.execute/custom/bin
+
 dockerd-rootless-setuptool.sh install
 
 eminds user:
