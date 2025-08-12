@@ -30,10 +30,12 @@ eminds user:
 ===========
 
 mkdir -p $HOME/.execute/custom
+
 nano /home/eminds/.execute/custom rootless-docker-setup.sh
+
 chmod 700 rootless-docker-setup.sh
 
---> Paste the "rootless docker" installation steps here which is above given.
+- Paste the "rootless docker" installation steps here which is above given.
 
 sudo apt update
 sudo apt install shc -y
