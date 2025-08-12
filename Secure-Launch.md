@@ -212,6 +212,7 @@ After Login:
 ===========
 
 export CON_BIN=$HOME/.execute/custom/bin
+
 source $HOME/.execute/custom/bin/script.sh
 
 con ps
@@ -236,6 +237,7 @@ steps:
 =====
 
 sudo apt update -y
+
 sudo apt install libpam-google-authenticator -y
 
 
@@ -257,8 +259,10 @@ sudo nano /etc/pam.d/sshd
 
 - Add these lines after "@include common-auth"
 
+```bash
 auth [success=1 default=ignore] pam_succeed_if.so user != eminds
 auth required pam_google_authenticator.so 
+```
 
 - the first line checks whether the user is not "eminds". so if the user is not "eminds" and it become true and skips the next line
 
@@ -268,9 +272,11 @@ auth required pam_google_authenticator.so
 
 sudo nano /etc/ssh/sshd_config
 
+```bash
 ChallengeResponseAuthentication yes
 UsePAM yes
 PasswordAuthentication yes
+```
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
