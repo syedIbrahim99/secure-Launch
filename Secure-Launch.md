@@ -139,11 +139,13 @@ Restricting "su" user:
 
 - Perform this all from "eminds" user.
 
+```bash
 sudo groupadd suaccess
 sudo chown eminds:suaccess /bin/su
 sudo chown eminds:suaccess /usr/bin/su
 sudo chmod 4750 /bin/su
 sudo chmod 4750 /usr/bin/su
+```
 
 Explanation:
 ===========
