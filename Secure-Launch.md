@@ -38,8 +38,11 @@ chmod 700 rootless-docker-setup.sh
 - Paste the "rootless docker" installation steps here which is above given.
 
 sudo apt update
+
 sudo apt install shc -y
+
 sudo apt install build-essential -y
+
 shc -f rootless-docker-setup.sh -o rootless-docker-setup
 
 Note:
