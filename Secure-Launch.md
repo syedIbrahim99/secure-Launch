@@ -377,3 +377,58 @@ COPY --from=codeshelf /home/eminds/app/.env /home/eminds/.env
 #CMD [./app-binary]
 #docker build -t emindsguardians/service:alpine-hard-gateway .
 ```
+
+### kubernetes YAML for Hardened image:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: hard
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostAliases:
+        - ip: "10.0.0.99"
+          hostnames:
+            - "dev.example.eminds.ai"
+      containers:
+        - name: app
+          image: privaterepo.com:5000/hard:code-render-v1
+          command: ["./app-binary"]
+
+          securityContext:
+            runAsUser: 1001         # UID of user 'eminds'
+            runAsGroup: 1001        # GID of group 'eminds' (optional)
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 8484
+              name: app
+      nodeSelector:
+        node-type: worker1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  namespace: hard
+spec:
+  type: NodePort
+  selector:
+    app: app
+  ports:
+    - protocol: TCP
+      port: 8484
+      nodePort: 30848
+```
