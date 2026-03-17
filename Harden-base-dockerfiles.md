@@ -1,4 +1,4 @@
-## Python: Tag (privaterepo.com:5000/node:18.5.0-alpine-hard)
+## Node: Tag (privaterepo.com:5000/node:18.5.0-alpine-hard)
 
 ```bash
 #FROM runtime:version-os
@@ -83,7 +83,7 @@ RUN cp /execute/.custom/entry/sash /bin/sh && chmod +x /bin/sh
 
 ```
 
-## Node: Tag (privaterepo.com:5000/base:python3.11-alpine-hard)
+## Python: Tag (privaterepo.com:5000/base:python3.11-alpine-hard)
 
 ```bash
 FROM python:3.11-alpine
